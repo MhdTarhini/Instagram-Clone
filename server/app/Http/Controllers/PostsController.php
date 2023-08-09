@@ -8,6 +8,19 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
+
+    function CreatPost(Request $request) {
+        $post=new Post;
+        $post->user_id=Auth::user();
+        $post->content=$request->content?:"";
+        $post->image=$request->image;
+        return response()->json([
+            "status" => "success", 
+            "data" => $post
+        ]);
+    }
+
+
     function GetUserFollowingPosts() {
         $auth_user=Auth::user();
         $following=$auth_user->following()->pluck('following_id');
@@ -16,6 +29,14 @@ class PostsController extends Controller
         return response()->json([
             "status" => "success", 
             "data" => $following_posts
+        ]);
+    }
+    function GetPostLikes($id) {
+        $post=Post::find($id);
+        $post_likes = $post->Likes()->get();
+        return response()->json([
+            "status" => "success", 
+            "data" => $post_likes
         ]);
     }
 }

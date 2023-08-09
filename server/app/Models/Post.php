@@ -13,6 +13,10 @@ class Post extends Model
         'content',
         'image',
     ];
+
+    // public function scopePost($query ,$id){
+    //     return $query->where("id", $id);
+    // }
     public function Users(){
         return $this->belongsTo(User::class,"user_id");
     }
