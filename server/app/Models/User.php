@@ -19,10 +19,28 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
     ];
+    public function posts(){
+        return $this->hasMany(Post::class,'user_id');
+    }
+    public function likes()
+    {
+        return $this->hasMany(Like::class,'user_id');
+    }
 
+     public function followers()
+    {
+        return $this->hasMany(Follow::class, 'following_id');
+    }
+
+    public function following()
+    {
+        return $this->hasMany(Follow::class, 'follower_id');
+    }
+    
     /**
      * The attributes that should be hidden for serialization.
      *
