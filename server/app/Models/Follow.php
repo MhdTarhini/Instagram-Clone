@@ -12,6 +12,13 @@ class Follow extends Model
         'follower_id',
         'following_id',
     ];
+
+    public function scopePosts($query,$id){
+        return $query->where("following_id",$id);
+    }
+    public function scopeFollower($query,$id){
+        return $query->where("follower_id",$id);
+    }
     public function follower()
     {
         return $this->belongsTo(User::class, 'follower_id');
@@ -19,7 +26,11 @@ class Follow extends Model
 
     public function following()
     {
-        return $this->belongsTo(User::class, 'following_id');
+        return $this->belongsTo(User::class, 'follower_id');
+    }
+    public function followingPosts()
+    {
+        return $this->belongsToMany(Post::class,'following_id','user_id');
     }
 }
 
