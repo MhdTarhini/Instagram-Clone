@@ -44,6 +44,7 @@ function Posts({ Reload }) {
             user={post.users}
             likes={post.likes_count}
             isLiked={isliked.includes(post.id) ? true : false}
+            key={post.id}
           />
         );
       })}

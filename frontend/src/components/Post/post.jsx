@@ -23,11 +23,10 @@ function Post({ id, image, content, user, likes, isLiked }) {
   useEffect(() => {
     setUserliked(isLiked);
   }, [isLiked]);
-  console.log(image);
   return (
     <div className="card flex column">
       <div className="user-profile flex pointer ">
-        <img src="/3135715.png" alt="" srcset="" className="profile-image" />
+        <img src="/3135715.png" alt="" className="profile-image" />
         <div>{user.name}</div>
       </div>
       <img
@@ -42,10 +41,9 @@ function Post({ id, image, content, user, likes, isLiked }) {
             width="40px"
             height="40px"
             viewBox="0 0 1024 1024"
-            class="icon"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
-            className="pointer"
+            className="pointer icon"
             onClick={() => {
               handleLike();
             }}>
@@ -72,9 +70,9 @@ function Post({ id, image, content, user, likes, isLiked }) {
             <g
               id="Page-1"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd">
+              fillRule="evenodd">
               <g
                 id="Icon-Set"
                 transform="translate(-100.000000, -255.000000)"

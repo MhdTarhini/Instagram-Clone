@@ -18,6 +18,8 @@
         padding-bottom: 80px;
         background-color: white;
         z-index: 1;
+        bottom: 0;
+            padding-bottom: 0;
     }
     .none-sm{
         display: none;
@@ -26,5 +28,6 @@
         width: 60px;
         height: 60px;
     }
-    
+
 }
+
