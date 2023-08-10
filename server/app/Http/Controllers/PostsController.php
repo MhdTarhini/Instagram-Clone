@@ -25,7 +25,7 @@ class PostsController extends Controller
     function GetUserFollowingPosts() {
         $auth_user=Auth::user();
         $following=$auth_user->following()->pluck('following_id');
-        $following_posts = Post::whereIn('user_id', $following)->with('users')->withCount('likes')->get();
+        $following_posts = Post::whereIn('user_id', $following)->with('Users')->withCount('Likes')->get();
 
         return response()->json([
             "status" => "success", 

@@ -1,4 +1,8 @@
 .card-container {
+    position: relative;
+    left: 40%;
+    align-items: flex-start;
     flex-wrap: wrap;
     padding: 20px;
+    width: 500px
 }

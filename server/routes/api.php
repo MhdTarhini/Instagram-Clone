@@ -19,8 +19,9 @@ Route::group(["middleware" => "auth:api"], function(){
         Route::get("get_post_likes/{id?}", [PostsController::class, "GetPostLikes"]);
         Route::post('create_post',[PostsController::class,"CreatPost"]);
         
-        Route::post('add_like',[LikesController::class,"addLike"]);
-        Route::delete('remove_like',[LikesController::class,"removeLike"]);
+        Route::get("add_like/{id?}",[LikesController::class,"addLike"]);
+        Route::delete("remove_like/{id?}",[LikesController::class,"removeLike"]);
+        Route::get('user_likes',[LikesController::class,"userIsLiked"]);
 
 });
 

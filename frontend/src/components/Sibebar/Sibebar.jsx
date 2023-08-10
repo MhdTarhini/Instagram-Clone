@@ -1,15 +1,31 @@
-import React from "react";
-import "./navbar.css";
+import React, { useState } from "react";
+import "./Sibebar.css";
 
-function Navbar() {
+function Sibebar() {
+  const [isopen, setIsOpen] = useState(false);
   return (
     <div className="navbar flex column">
+      {isopen ? (
+        <div>
+          <div className="create-model">
+            <input type="file" name="" id="" />
+          </div>
+        </div>
+      ) : (
+        <div></div>
+      )}
       <img src="/images.png" alt="" className="logo" />
       <input type="search" name="search" id="search" />
       <div className="pointer">Reels</div>
       <div className="pointer">Messages</div>
       <div className="pointer">Notifications</div>
-      <div className="pointer">Create</div>
+      <div
+        className="pointer"
+        onClick={() => {
+          setIsOpen(!isopen);
+        }}>
+        Create
+      </div>
       <div className="user-profile flex pointer ">
         <img src="/3135715.png" alt="" srcset="" className="profile-image" />
         <div>name</div>
@@ -18,4 +34,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Sibebar;
