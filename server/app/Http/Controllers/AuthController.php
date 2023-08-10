@@ -10,14 +10,14 @@ class AuthController extends Controller{
 
     public function unauthorized(Request $request){
         return response()->json([
-            'status' => 'Error',
+            'status' => 'error',
             'message' => 'Unauthorized',
         ], 200);
     }
 
     public function profile(Request $request){
         return response()->json([
-            'status' => 'Success',
+            'status' => 'success',
             'data' => Auth::user(),
         ], 200);
     }
@@ -34,7 +34,7 @@ class AuthController extends Controller{
  
         if (!$token) {
             return response()->json([
-                'status' => 'Error',
+                'status' => 'error',
                 'message' => 'Unauthorized',
             ], 401);
         }
@@ -43,7 +43,7 @@ class AuthController extends Controller{
         $user->token = $token;
         
         return response()->json([
-                'status' => 'Success',
+                'status' => 'success',
                 'data' => $user
             ]);
 
@@ -68,7 +68,7 @@ class AuthController extends Controller{
         $user->token = $token;
 
         return response()->json([
-            'status' => 'Success',
+            'status' => 'success',
             'data' => $user
         ]);
     }

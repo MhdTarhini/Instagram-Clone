@@ -28,13 +28,5 @@ class UserController extends Controller
             "data" => $following
         ]);
     }
-    // function GetUserFollowingPosts() {
-    //     $auth_user=Auth::user();
-    //     $following=$auth_user->Posts()->get();
 
-    //     return response()->json([
-    //         "status" => "success", 
-    //         "data" => $following
-    //     ]);
-    // }
 }
