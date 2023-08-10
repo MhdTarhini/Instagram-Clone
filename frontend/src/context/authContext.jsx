@@ -16,7 +16,8 @@ export const AuthContextProvider = ({ children }) => {
     setUserData(response.data.data);
   };
   const logout = async () => {
-    await axios.post("http://127.0.0.1:8000/api/login");
+    axios.defaults.headers.common["Authorization"] = `Bearer ${userData.token}`;
+    await axios.post("http://127.0.0.1:8000/api/logout");
     setUserData(null);
   };
 

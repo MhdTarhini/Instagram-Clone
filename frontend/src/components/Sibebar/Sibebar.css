@@ -18,12 +18,38 @@ input {
     gap: 10px;
     align-items: center;
 }
+.post-image {
+    width: 300px;
+}
 
 .create-model {
-    border: 1px solid black;
-    padding: 70px;
+    width: 300px;
+    height: 400px;
     position: absolute;
-    left: 200%;
     top: 50%;
-    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 5px 5px 10px 5px grey;
 }
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.create-model {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:20px
+}
+
+.buttons-container{
+  display: flex;
+  justify-content: center;
+}
+    

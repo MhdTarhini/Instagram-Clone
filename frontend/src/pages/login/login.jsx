@@ -22,7 +22,6 @@ function Login() {
   const handlesubmit = async () => {
     try {
       login(data);
-      console.log("Deal");
       navigate("/home");
     } catch (err) {
       setError(true);
@@ -37,11 +36,13 @@ function Login() {
           onchange={handleDataChange}
           label={"Mobile Number or Email"}
           name={"email"}
+          type={"email"}
         />
         <Input
           onchange={handleDataChange}
           label={"Password"}
           name={"password"}
+          type={"password"}
         />
       </div>
       <button className="button roundedMedium bold" onClick={handlesubmit}>

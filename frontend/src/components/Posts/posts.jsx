@@ -4,6 +4,7 @@ import "./posts.css";
 import axios from "axios";
 import { AuthContext } from "../../context/authContext";
 
+
 function Posts() {
   const { userData } = useContext(AuthContext);
   axios.defaults.headers.common["Authorization"] = `Bearer ${userData.token}`;

@@ -55,21 +55,25 @@ function Register() {
             onchange={handleDataChange}
             label={"Mobile Number or Email"}
             name={"email"}
+            type={"email"}
           />
           <Input
             onchange={handleDataChange}
             label={"Full Name"}
             name={"name"}
+            type={"text"}
           />
           <Input
             onchange={handleDataChange}
             label={"Username"}
             name={"username"}
+            type={"text"}
           />
           <Input
             onchange={handleDataChange}
             label={"Password"}
             name={"password"}
+            type={"password"}
           />
         </div>
         {error ? (

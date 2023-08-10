@@ -2,6 +2,7 @@
     width: 100%;
     gap: 20px;
     padding: 30px;
+    z-index: 0;
 }
 
 .like {
@@ -12,6 +13,3 @@
     gap: 10px
 }
 
-.post-image {
-    width: 300px;
-}

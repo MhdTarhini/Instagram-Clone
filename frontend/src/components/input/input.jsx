@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./input.css";
 
-function Input({ onchange, label, name }) {
+function Input({ onchange, label, name, type }) {
   const [showLabel, setShowLabel] = useState(false);
+
   const isEmpty = (e) => {
     if (e.target.value == "") {
       setShowLabel(false);
@@ -19,7 +20,7 @@ function Input({ onchange, label, name }) {
         {label}
       </label>
       <input
-        type="text"
+        type={type}
         name={name}
         id={name}
         placeholder={label}

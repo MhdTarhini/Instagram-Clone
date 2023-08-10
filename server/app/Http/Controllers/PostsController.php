@@ -12,9 +12,10 @@ class PostsController extends Controller
 
     function CreatPost(Request $request) {
         $post=new Post;
-        $post->user_id=Auth::user();
+        $post->user_id=Auth::user()->id;
         $post->content=$request->content?:"";
         $post->image=$request->image;
+        $post->save();
         return response()->json([
             "status" => "success", 
             "data" => $post
