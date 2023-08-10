@@ -21,7 +21,7 @@ function Login() {
 
   const handlesubmit = async () => {
     try {
-      login(data);
+      await login(data);
       navigate("/home");
     } catch (err) {
       setError(true);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserController;
@@ -15,6 +16,7 @@ Route::group(["middleware" => "auth:api"], function(){
         Route::get("get_user_posts", [UserController::class, "GetUserPosts"]);
         Route::get("get_user_following", [UserController::class, "GetUserFollowing"]);
         Route::get("get_Following_posts", [PostsController::class, "GetUserFollowingPosts"]);
+        Route::get('search_users', [UserController::class,'searchUser']);
 
         Route::get("get_post_likes/{id?}", [PostsController::class, "GetPostLikes"]);
         Route::post('create_post',[PostsController::class,"CreatPost"]);
@@ -22,6 +24,9 @@ Route::group(["middleware" => "auth:api"], function(){
         Route::get("add_like/{id?}",[LikesController::class,"addLike"]);
         Route::delete("remove_like/{id?}",[LikesController::class,"removeLike"]);
         Route::get('user_likes',[LikesController::class,"userIsLiked"]);
+
+        Route::get('follow_user/{id?}',[FollowsController::class,"followUser"]);
+        Route::get('follow_remove/{id?}',[FollowsController::class,"removeFollow"]);
 
 });
 

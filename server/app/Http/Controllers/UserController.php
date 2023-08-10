@@ -21,12 +21,22 @@ class UserController extends Controller
     }
     function GetUserFollowing() {
         $auth_user=Auth::user();
-        $following=$auth_user->Following()->get();
+        $following=$auth_user->Following()->pluck('following_id')->toArray();
 
         return response()->json([
             "status" => "success", 
             "data" => $following
         ]);
     }
+
+    public function searchUser(Request $request) {
+    $query = $request->query('query');
+    $users = User::where('name', 'like', "%$query%")->get();
+    
+    return response()->json([
+        "status" => "success", 
+        "data" => $users
+    ]);
+}
 
 }

@@ -3,6 +3,7 @@ import { AuthContext } from "../../context/authContext";
 import Sibebar from "../../components/Sibebar/Sibebar";
 import Posts from "../../components/Posts/posts";
 import axios from "axios";
+import "./home.css";
 
 function Home() {
   const { userData } = useContext(AuthContext);

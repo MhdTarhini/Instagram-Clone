@@ -23,13 +23,18 @@ function Post({ id, image, content, user, likes, isLiked }) {
   useEffect(() => {
     setUserliked(isLiked);
   }, [isLiked]);
+  console.log(image);
   return (
     <div className="card flex column">
       <div className="user-profile flex pointer ">
         <img src="/3135715.png" alt="" srcset="" className="profile-image" />
         <div>{user.name}</div>
       </div>
-      <img src="/FjU2lkcWYAgNG6d.jpg" alt="" className="post-image" />
+      <img
+        src={`http://127.0.0.1:8000/images/${image}`}
+        alt=""
+        className="post-image"
+      />
       <div className="like flex ">
         <div className="flex center">
           <span>{countLike}</span>

@@ -13,7 +13,10 @@ export const AuthContextProvider = ({ children }) => {
       "http://127.0.0.1:8000/api/guest/login",
       data
     );
-    setUserData(response.data.data);
+    const userdata = await response.data;
+    setUserData(userdata.data);
+    localStorage.setItem("user", JSON.stringify(userData));
+
   };
   const logout = async () => {
     axios.defaults.headers.common["Authorization"] = `Bearer ${userData.token}`;
