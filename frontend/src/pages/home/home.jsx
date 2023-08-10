@@ -9,7 +9,7 @@ function Home() {
   const { userData } = useContext(AuthContext);
   axios.defaults.headers.common["Authorization"] = `Bearer ${userData.token}`;
   return (
-    <div className="flex homepage">
+    <div className=" homepage">
       <Sibebar />
       <Posts />
     </div>

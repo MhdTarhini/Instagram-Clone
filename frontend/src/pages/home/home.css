@@ -1,3 +1,30 @@
 .homepage {
-    gap: 10px
+    display: flex;
+    gap: 10px;
+
+    }
+
+
+    
+@media (max-width: 497px) {
+    .card-container{
+        align-self: center;
+    }
+    .homepage {
+        flex-direction: column-reverse;
+    }
+    .navbar{
+        flex-direction: row;
+        padding-bottom: 80px;
+        background-color: white;
+        z-index: 1;
+    }
+    .none-sm{
+        display: none;
+    }
+    .profile-image{
+        width: 60px;
+        height: 60px;
+    }
+    
 }
