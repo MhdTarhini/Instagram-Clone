@@ -6,7 +6,7 @@ import { AuthContext } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function Sibebar() {
+function Sibebar({ reloadPosts }) {
   const navigate = useNavigate();
   const { logout, userData } = useContext(AuthContext);
   const [isopen, setIsOpen] = useState(false);
@@ -51,7 +51,10 @@ function Sibebar() {
       const response = await axios.get(
         `http://127.0.0.1:8000/api/search_users?query=${searchQuery}`
       );
-      setDataSearch(response.data.data);
+      const filtereSearch = response.data.data.filter(
+        (user) => user.id !== userData.id
+      );
+      setDataSearch(filtereSearch);
     } catch (error) {
       console.error(error);
     }
@@ -101,6 +104,7 @@ function Sibebar() {
         await axios.get(`http://127.0.0.1:8000/api/follow_remove/${id}`);
       }
       GetFollowingUsers();
+      reloadPosts();
     } catch (error) {
       console.log(error);
     }

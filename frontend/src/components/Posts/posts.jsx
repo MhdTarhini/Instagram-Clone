@@ -5,7 +5,7 @@ import axios from "axios";
 import { AuthContext } from "../../context/authContext";
 
 
-function Posts() {
+function Posts({ Reload }) {
   const { userData } = useContext(AuthContext);
   axios.defaults.headers.common["Authorization"] = `Bearer ${userData.token}`;
   const [postdata, SetPostData] = useState([]);
@@ -15,7 +15,8 @@ function Posts() {
       const response = await axios.get(
         "http://127.0.0.1:8000/api/get_Following_posts"
       );
-      SetPostData(response.data.data);
+      const PostsData = await response.data.data;
+      SetPostData(PostsData.reverse());
     } catch (error) {
       console.error(error);
     }
@@ -31,7 +32,7 @@ function Posts() {
   useEffect(() => {
     fetchPosts();
     fetchIsliked();
-  }, []);
+  }, [Reload]);
   return (
     <div className="card-container flex">
       {postdata.map((post) => {
