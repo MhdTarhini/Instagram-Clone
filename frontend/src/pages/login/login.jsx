@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Input from "../../components/input/input";
 import "./login.css";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 function Login() {
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
   const [error, setError] = useState(false);
   const [errorContent, setErrorContent] = useState("");
@@ -20,10 +21,8 @@ function Login() {
 
   const handlesubmit = async () => {
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/guest/login",
-        data
-      );
+      login(data);
+      console.log("Deal");
       navigate("/home");
     } catch (err) {
       setError(true);
