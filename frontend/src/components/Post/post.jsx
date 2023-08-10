@@ -34,9 +34,9 @@ function Post({ id, image, content, user, likes, isLiked }) {
         alt=""
         className="post-image"
       />
-      <div className="like flex ">
-        <div className="flex center">
-          <span>{countLike}</span>
+      <div className="like flex">
+        <div className="flex center column-reverse">
+          <span>{countLike} likes</span>
           <svg
             width="40px"
             height="40px"
@@ -61,8 +61,8 @@ function Post({ id, image, content, user, likes, isLiked }) {
             />
           </svg>
         </div>
-        <div className="flex center">
-          <span>7</span>
+        <div className="flex center column-reverse">
+          <span>7 comments</span>
           <svg width="40px" height="40px" viewBox="0 0 32 32" version="1.1">
             <title>comment-1</title>
             <desc>Created with Sketch Beta.</desc>
