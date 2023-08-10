@@ -48,6 +48,7 @@
 .buttons-container{
   display: flex;
   justify-content: center;
+  gap:20px
 }
 
 .search-side {
@@ -102,4 +103,8 @@
 
 .text {
   font-weight: 700;
+}
+.follow{
+  background-color: rgba(58, 58, 234, 0.752);
+  padding: 5px;
 }

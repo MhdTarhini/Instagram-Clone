@@ -253,8 +253,12 @@ function Sibebar({ reloadPosts }) {
               type={"text"}
             />
             <div className="buttons-container">
-              <button onClick={closeModal}>Cancel</button>
-              <button onClick={handleSavePost}>Save</button>
+              <button onClick={closeModal} className="follow">
+                Back
+              </button>
+              <button onClick={handleSavePost} className="follow">
+                Post
+              </button>
             </div>
           </div>
         </Modal>
@@ -285,16 +289,16 @@ function Sibebar({ reloadPosts }) {
                       followUser(user.id);
                     }}>
                     {isFollowing.includes(user.id) ? (
-                      <div className="pointer">followed</div>
+                      <button className="pointer follow">unfollow</button>
                     ) : (
-                      <div className="pointer">follow</div>
+                      <button className="pointer follow">follow</button>
                     )}
                   </div>
                 </div>
               );
             })}
           </div>
-          <button onClick={closeSearchModal}>Cancel</button>
+          <button onClick={closeSearchModal}>Back</button>
         </div>
       </Modal>
     </>
