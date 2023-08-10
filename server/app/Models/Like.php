@@ -22,4 +22,8 @@ class Like extends Model
     {
         return $this->belongsTo(Post::class,'post_id');
     }
+
+    function scopeIsliked($query,$id){
+        return $query->where('user_id', $id);
+    }
 }

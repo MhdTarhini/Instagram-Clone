@@ -4,7 +4,7 @@ import Register from "./pages/register/register";
 import "./utilities.css";
 import Login from "./pages/login/login";
 import { AuthContextProvider } from "./context/authContext";
-import Home from "./pages/home";
+import Home from "./pages/home/home";
 
 function App() {
   return (

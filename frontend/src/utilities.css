@@ -75,3 +75,6 @@ button {
     color: red;
     font-size: 12px;
 }
+.pointer {
+    cursor: pointer;
+}

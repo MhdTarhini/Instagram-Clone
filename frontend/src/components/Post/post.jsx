@@ -1,13 +1,17 @@
 import React from "react";
 import "./post.css";
 
-function Post() {
+function Post({ image, content, user, likes }) {
   return (
     <div className="card flex column center">
-      <img src="/FjU2lkcWYAgNG6d.jpg" alt="" srcset="" className="post-image" />
+      <div className="user-profile flex pointer ">
+        <img src="/3135715.png" alt="" srcset="" className="profile-image" />
+        <div>{user.name}</div>
+      </div>
+      <img src="/FjU2lkcWYAgNG6d.jpg" alt="" className="post-image" />
       <div className="like flex center">
         <div className="flex center">
-          <span>2</span>
+          <span>{likes}</span>
           <svg
             width="40px"
             height="40px"
@@ -53,7 +57,7 @@ function Post() {
           </svg>
         </div>
       </div>
-      <div>content</div>
+      <div>{content}</div>
     </div>
   );
 }
