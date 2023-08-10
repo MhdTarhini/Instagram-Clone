@@ -1,0 +1,17 @@
+.card {
+    width: 100%;
+    gap: 20px;
+    padding: 30px;
+}
+
+.like {
+    gap: 25px;
+}
+
+.like div {
+    gap: 10px
+}
+
+.post-image {
+    width: 300px;
+}

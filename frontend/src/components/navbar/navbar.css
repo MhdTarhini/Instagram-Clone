@@ -8,7 +8,7 @@ input {
     border: 1px solid red;
 }
 
-img {
+.profile-image {
     width: 60px;
     height: 60px;
 }

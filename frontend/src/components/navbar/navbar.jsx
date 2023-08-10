@@ -9,7 +9,7 @@ function Navbar() {
         <input type="search" name="search" id="search" />
       </div>
       <div className="user-profile flex center">
-        <img src="/3135715.png" alt="" srcset="" />
+        <img src="/3135715.png" alt="" srcset="" className="profile-image" />
         <div>name</div>
       </div>
     </div>
